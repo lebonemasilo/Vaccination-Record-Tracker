@@ -1,0 +1,61 @@
+package model;
+public class vaccine {
+    private String vaccineName;
+    private String dateAnimistered;
+    private int requiredDoses;
+    private int minIntervalDays;
+    
+
+     public Vaccine (String vacinneName, String dateAdministered, int requiredDoses, int minIntervalDays ){
+        setMinIntervalDays(minIntervalDays);
+        setRequiredDoses(requiredDoses);
+        setVaccineName (vacinneName);
+        setDateAdministered (dateAdministered);
+     }
+
+   public String getVaccineName() {
+        return vaccineName;
+    }
+   public String getDateAdministered() {
+        return dateAnimistered;
+    }
+    public int getRequiredDoses() {
+        return requiredDoses;
+    }
+    public int getMinIntervalDays() {
+        return minIntervalDays;
+    }
+   public vaccine (String vaccineName, int doseNumber, String dateAnimistered, int minIntervalDays, int requiredDoses) {
+         public void setVaccineName (String vaccineName){
+        if (vaccineName == null || vaccineName.isEmpty()) 
+            throw new IllegalArgumentException ("vaccine name cannot be empty");
+            this.vaccineName = vaccineName;
+        }
+        
+       public void setDateAdministered (String dateAdministered) {
+        if (dateAdministered == null || dateAdministered.isEmpty()) {
+            throw new IllegalArgumentException ("please enter date of administration");
+            this.dateAnimistered = dateAnimistered;
+        }    
+        public void setRequiredDoses (int requiredDoses) {
+            if (requiredDoses <= 0)
+                throw new IllegalArgumentException ("Please enter required dose");
+            this.requiredDoses = requiredDoses;
+        }
+        public void setMinIntervalDays (int minIntervalDays) {
+            if (minIntervalDays < 0)
+                throw new IllegalArgumentException("Interval days cannot be negative");
+        }
+
+        @Override
+        public String toString () {
+            return vaccineName + "(" + requiredDoses + "dose(s), interval " + minIntervalDays + "days)" ;        
+        }
+    }
+
+        
+        
+        
+        
+   }
+}
