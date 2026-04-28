@@ -1,23 +1,27 @@
 package model;
 public class vaccine {
     private String vaccineName;
-    private String dateAnimistered;
+    private String manufacturer;
     private int requiredDoses;
     private int minIntervalDays;
     
 
-     public Vaccine (String vacinneName, String dateAdministered, int requiredDoses, int minIntervalDays ){
+     public Vaccine (String vacineName, String dateAdministered, int requiredDoses, int minIntervalDays ){
         setMinIntervalDays(minIntervalDays);
         setRequiredDoses(requiredDoses);
         setVaccineName (vacinneName);
-        setDateAdministered (dateAdministered);
+        setManufacturer (manufacturer);
+     }
+
+public Vaccine (String vaccineName, int required Doses) {
+    this(vaccineName, requiredDoses, 0, "Unknown");
      }
 
    public String getVaccineName() {
         return vaccineName;
     }
-   public String getDateAdministered() {
-        return dateAnimistered;
+   public String getManufacturer() {
+        return manufacturer;
     }
     public int getRequiredDoses() {
         return requiredDoses;
@@ -25,37 +29,37 @@ public class vaccine {
     public int getMinIntervalDays() {
         return minIntervalDays;
     }
-   public vaccine (String vaccineName, int doseNumber, String dateAnimistered, int minIntervalDays, int requiredDoses) {
+   public vaccine (String vaccineName, int doseNumber, String dateAdministered, int minIntervalDays, int requiredDoses) {
          public void setVaccineName (String vaccineName){
-        if (vaccineName == null || vaccineName.isEmpty()) 
-            throw new IllegalArgumentException ("vaccine name cannot be empty");
+        if (vaccineName == null || vaccineName.trim().isEmpty()) {
+            throw new IllegalArgumentException ("vaccine name cannot be empty");}
             this.vaccineName = vaccineName;
         }
-        
-       public void setDateAdministered (String dateAdministered) {
-        if (dateAdministered == null || dateAdministered.isEmpty()) {
-            throw new IllegalArgumentException ("please enter date of administration");
-            this.dateAnimistered = dateAnimistered;
-        }    
+
+        public void setManufacturer(String manufacture) {
+           this.manufacturer = (manufacturer == null) 
+             return ("Unknown Manufacturer");
+               }
+    
         public void setRequiredDoses (int requiredDoses) {
-            if (requiredDoses <= 0)
-                throw new IllegalArgumentException ("Please enter required dose");
+            if (requiredDoses <= 0) {
+                throw new IllegalArgumentException ("Required dose must be positive"); }
             this.requiredDoses = requiredDoses;
         }
         public void setMinIntervalDays (int minIntervalDays) {
-            if (minIntervalDays < 0)
-                throw new IllegalArgumentException("Interval days cannot be negative");
+            if (minIntervalDays < 0) {
+                throw new IllegalArgumentException("Interval days cannot be negative");}
+                this.minIntervalDays = minIntervalDays;
         }
 
         @Override
         public String toString () {
-            return vaccineName + "(" + requiredDoses + "dose(s), interval " + minIntervalDays + "days)" ;        
-        }
+            return vaccineName + "(" + requiredDoses + "dose(s), interval " + minIntervalDays + "days)";        
+        } 
     }
 
         
         
         
         
-   }
-}
+   
