@@ -1,4 +1,6 @@
+package service
 import java.util.List;
+import model.VaccinationRecord;
 
 public class DetailedReport implements ReportGenerator {
     public DetailedReport() {
