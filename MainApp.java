@@ -18,7 +18,7 @@ public class MainApp {
         Patient p1 = new Patient( 
                 "P001",
                 "Thabo Molefe",
-                LocalDate.of(2010, 5, 12),
+                LocalDate.of(2010, 05, 12), // fixed format
                 "Serowe",
                 "71234567"
         );
@@ -26,7 +26,7 @@ public class MainApp {
         Patient p2 = new Patient(
                 "P002",
                 "Naledi Dube",
-                LocalDate.of(2012, 8, 20),
+                LocalDate.of(2012, 08, 20), // fixed format
                 "Maun",
                 "72345678"
         );
