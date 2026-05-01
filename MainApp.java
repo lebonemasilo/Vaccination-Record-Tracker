@@ -8,14 +8,14 @@ import java.util.List;
 
 public class MainApp {
 
-    public static void main(String[] args) {
+public static void main(String[] args) {
 
         VaccinationTracker tracker = new VaccinationTracker();  // Create the tracker (service)
 
         
-        // Create patients 
+        // Create patients
 
-        Patient p1 = new Patient( 
+        Patient p1 = new Patient(
                 "P001",
                 "Thabo Molefe",
                 LocalDate.of(2010, 05, 12), // fixed format
@@ -26,7 +26,7 @@ public class MainApp {
         Patient p2 = new Patient(
                 "P002",
                 "Naledi Dube",
-                LocalDate.of(2012, 08, 20), // fixed format
+                LocalDate.of(2012, 07, 20), // fixed format
                 "Maun",
                 "72345678"
         );
@@ -66,7 +66,7 @@ public class MainApp {
         List<VaccinationRecord> history = tracker.getHistory(p1);
 
         for (VaccinationRecord record : history) {
-            System.out.println(record);
+        System.out.println(record);
         }
 
         
@@ -79,5 +79,5 @@ public class MainApp {
         System.out.println("\n--- Detailed Report ---");
         ReportGenerator detailedReport = new DetailedReport();
         detailedReport.generateReport(tracker.getAllRecords());
-    }
+}
 }
